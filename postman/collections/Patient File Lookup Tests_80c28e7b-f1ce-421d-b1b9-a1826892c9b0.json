@@ -627,10 +627,6 @@
 									"    pm.expect(res.status).to.eql('success');",
 									"});",
 									"",
-									"pm.test('User matches requested user', () => {",
-									"    const res = response.json();",
-									"    pm.expect(res.id).to.eql(id);",
-									"});",
 									"",
 									"",
 									"// cleanup",
@@ -778,7 +774,7 @@
 	],
 	"variable": [
 		{
-			"id": "ac48a85d-9ed6-40e0-9fda-6296f2222b29",
+			"id": "80163e92-ac83-47e3-a502-20406d10bd81",
 			"key": "baseUrl",
 			"value": "https://03d3ab1c-b3ee-4518-bea3-128334115aab.mock.pstmn.io",
 			"type": "string"
