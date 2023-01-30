@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "7becfaf0-da8d-4023-969a-9581a045fa8a",
+		"_postman_id": "afcc8ec4-ab09-4c9d-9505-5ad9291774b7",
 		"name": "Patient File Lookup Tests",
 		"description": "API for creating and managing patient information.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "24113271-7becfaf0-da8d-4023-969a-9581a045fa8a"
+		"_uid": "16901628-afcc8ec4-ab09-4c9d-9505-5ad9291774b7"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2a9485c0-34a6-43d2-ba43-6f7bebcc9a72",
+								"id": "487cd446-a498-4d5d-89a8-ae8c988dd45a",
 								"exec": [
 									"const res = pm.response.json();",
 									"",
@@ -53,7 +53,7 @@
 							}
 						}
 					],
-					"id": "303f7ac7-dd5b-4324-8030-07a14a2212ca",
+					"id": "d312ec13-3ef2-470e-b974-7de119923115",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -86,11 +86,20 @@
 					},
 					"response": [
 						{
-							"id": "515f7409-87e7-433d-b90f-94d823f85a8c",
+							"id": "a5b7f794-6475-47cc-a681-d56d89890031",
 							"name": "New patient file",
 							"originalRequest": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\"\n}"
@@ -103,7 +112,8 @@
 									"path": [
 										"create"
 									]
-								}
+								},
+								"description": "Creates a new patient file in the system. The patient file will be assigned an ID automatically. This can be found in the response."
 							},
 							"status": "OK",
 							"code": 200,
@@ -111,33 +121,48 @@
 							"header": [
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
-									"value": "keep-alive",
-									"description": ""
+									"value": "keep-alive"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Content-Length",
-									"value": "101",
-									"description": ""
+									"value": "101"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
-									"value": "Thu, 10 Jan 2019 23:58:59 GMT",
-									"description": ""
+									"value": "Thu, 10 Jan 2019 23:58:59 GMT"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "ETag",
-									"value": "W/\"65-KsPJ95rCxmmvvRBY2Sqroxk2vmA\"",
-									"description": ""
+									"value": "W/\"65-KsPJ95rCxmmvvRBY2Sqroxk2vmA\""
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
-									"value": "Express",
-									"description": ""
+									"value": "Express"
 								},
 								{
 									"key": "Content-Type",
@@ -150,7 +175,7 @@
 					]
 				}
 			],
-			"id": "1643fab2-4edc-4794-b3a6-3d6b76c83a45"
+			"id": "a1381283-1d37-4955-8dcc-5562b63fcfd6"
 		},
 		{
 			"name": "Read",
@@ -161,7 +186,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "04b93646-a3d3-4dee-b2bb-96e93e83c156",
+								"id": "8234a342-d414-4d41-932d-346745fcd8f8",
+								"type": "text/javascript",
 								"exec": [
 									"const res = pm.response.json();",
 									"const id = pm.collectionVariables.get('id');",
@@ -192,12 +218,11 @@
 									"// cleanup",
 									"pm.globals.unset('id');",
 									""
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
-					"id": "d475b820-2a9a-4d38-be3c-7dbf262e08dd",
+					"id": "53b8c671-79fb-4e83-81a4-53a76ae4a505",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -228,11 +253,16 @@
 					},
 					"response": [
 						{
-							"id": "c8c5bc29-7fe9-4e7f-bc3f-2e2c3d8c0028",
+							"id": "693faad1-ebf8-483f-8e0f-630a493efd49",
 							"name": "200 OK",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/get?all=true",
 									"host": [
@@ -247,7 +277,8 @@
 											"value": "true"
 										}
 									]
-								}
+								},
+								"description": "Get all patient files in the system."
 							},
 							"status": "OK",
 							"code": 200,
@@ -255,33 +286,48 @@
 							"header": [
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
-									"value": "keep-alive",
-									"description": ""
+									"value": "keep-alive"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Content-Length",
-									"value": "105",
-									"description": ""
+									"value": "105"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
-									"value": "Fri, 11 Jan 2019 00:00:53 GMT",
-									"description": ""
+									"value": "Fri, 11 Jan 2019 00:00:53 GMT"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "ETag",
-									"value": "W/\"69-ti7ujd/Cyb8EeoWoqRXh482Zy5o\"",
-									"description": ""
+									"value": "W/\"69-ti7ujd/Cyb8EeoWoqRXh482Zy5o\""
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
-									"value": "Express",
-									"description": ""
+									"value": "Express"
 								},
 								{
 									"key": "Content-Type",
@@ -294,12 +340,13 @@
 					]
 				},
 				{
-					"name": "Get patient files by last name",
+					"name": "Get all patient files",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "1bd3e16d-5661-45ee-b2a0-91ea786b8407",
+								"id": "229d7c56-c86a-4f73-9d57-de9d5f872ba9",
+								"type": "text/javascript",
 								"exec": [
 									"const res = pm.response.json();",
 									"const id = pm.collectionVariables.get('id');",
@@ -333,12 +380,11 @@
 									"// cleanup",
 									"pm.collectionVariables.unset('id');",
 									""
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
-					"id": "cea59f19-0edd-4e85-9305-7c05f2f3df02",
+					"id": "a35bba3f-6ffa-4ceb-bd0d-e1bf3fb2e36e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -351,47 +397,40 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/get/?firstName={{$randomLastName}}",
+							"raw": "{{baseUrl}}/get/",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"get",
 								""
-							],
-							"query": [
-								{
-									"key": "firstName",
-									"value": "{{$randomLastName}}",
-									"description": "The patient file's first name (required)"
-								}
 							]
 						},
-						"description": "Retrieves all patient files with the given `firstName`."
+						"description": "Get all patient files in the system."
 					},
 					"response": [
 						{
-							"id": "6489c063-e750-4e69-a68b-f9f89235b4b3",
+							"id": "0429fd8f-7c6f-4ba0-bfd4-12cd60294c35",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
 								"url": {
-									"raw": "{{baseUrl}}/get/?firstName={{$randomLastName}}",
+									"raw": "{{baseUrl}}/get/",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"get",
 										""
-									],
-									"query": [
-										{
-											"key": "firstName",
-											"value": "{{$randomLastName}}"
-										}
 									]
-								}
+								},
+								"description": "Get all patient files in the system."
 							},
 							"status": "OK",
 							"code": 200,
@@ -399,33 +438,48 @@
 							"header": [
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
-									"value": "keep-alive",
-									"description": ""
+									"value": "keep-alive"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Content-Length",
-									"value": "105",
-									"description": ""
+									"value": "105"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
-									"value": "Fri, 11 Jan 2019 00:05:34 GMT",
-									"description": ""
+									"value": "Fri, 11 Jan 2019 00:05:34 GMT"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "ETag",
-									"value": "W/\"69-F/ktIhtM5We/sndYYNUK1vmdEnQ\"",
-									"description": ""
+									"value": "W/\"69-F/ktIhtM5We/sndYYNUK1vmdEnQ\""
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
-									"value": "Express",
-									"description": ""
+									"value": "Express"
 								},
 								{
 									"key": "Content-Type",
@@ -438,7 +492,7 @@
 					]
 				}
 			],
-			"id": "37d0b0bd-6ce9-438a-8f25-4f94d31e9b38"
+			"id": "7bef37c1-4bb5-4481-9321-e9bc24f448fb"
 		},
 		{
 			"name": "Update",
@@ -449,7 +503,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "545274f5-2b52-4ebe-a57a-b593229533d2",
+								"id": "32170865-74c9-41a9-9fc7-0060f2b3726f",
+								"type": "text/javascript",
 								"exec": [
 									"const res = pm.response.json();",
 									"const id = pm.request.url.query.get('id');",
@@ -494,12 +549,11 @@
 									"// cleanup",
 									"pm.collectionVariables.unset('id');",
 									""
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
-					"id": "6fd5d5d9-c976-4866-a7df-398c69fb2dfb",
+					"id": "2f68f6d0-8e11-453d-9f45-16b5e25a26ee",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -529,9 +583,9 @@
 							],
 							"query": [
 								{
+									"description": "The patient file's ID (required)",
 									"key": "id",
-									"value": "{{id}}",
-									"description": "The patient file's ID (required)"
+									"value": "{{id}}"
 								}
 							]
 						},
@@ -539,11 +593,20 @@
 					},
 					"response": [
 						{
-							"id": "84f844ca-fba8-43a1-86a0-b0e1f66c0863",
+							"id": "9a20b2cc-8cb7-4184-abaa-5d6c2c1f5872",
 							"name": "Update patient file",
 							"originalRequest": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n  \"firstName\": \"Benjamin\",\n  \"password\": \"foobar\"\n}"
@@ -558,11 +621,13 @@
 									],
 									"query": [
 										{
+											"description": "The patient file's ID (required)",
 											"key": "id",
 											"value": "{{id}}"
 										}
 									]
-								}
+								},
+								"description": "Send the keys that you'd like to update, this can be one or more of `firstName`, `lastName` and `password`."
 							},
 							"status": "OK",
 							"code": 200,
@@ -570,33 +635,48 @@
 							"header": [
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
-									"value": "keep-alive",
-									"description": ""
+									"value": "keep-alive"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Content-Length",
-									"value": "106",
-									"description": ""
+									"value": "106"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
-									"value": "Fri, 11 Jan 2019 00:18:07 GMT",
-									"description": ""
+									"value": "Fri, 11 Jan 2019 00:18:07 GMT"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "ETag",
-									"value": "W/\"6a-SA9mzR+M2pmN7WPGgLm1ZqtRYis\"",
-									"description": ""
+									"value": "W/\"6a-SA9mzR+M2pmN7WPGgLm1ZqtRYis\""
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
-									"value": "Express",
-									"description": ""
+									"value": "Express"
 								},
 								{
 									"key": "Content-Type",
@@ -609,7 +689,7 @@
 					]
 				}
 			],
-			"id": "f39c2c90-35cf-4ac1-8ce9-c237dc15836b"
+			"id": "3f16d9eb-4768-4f58-a805-ed2f4c116f2c"
 		},
 		{
 			"name": "Delete",
@@ -620,7 +700,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1efd7f62-819d-45e3-a688-4722def6a61b",
+								"id": "4fab1360-4631-406f-b93e-356f3d5e40ce",
+								"type": "text/javascript",
 								"exec": [
 									"const response = pm.response;",
 									"const id = pm.request.url.query.get('id');",
@@ -634,12 +715,11 @@
 									"",
 									"// cleanup",
 									"pm.collectionVariables.unset('id');"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
-					"id": "ec6f5508-b7d7-47fe-9015-3261b27b143b",
+					"id": "7af46f09-2c3d-481f-8428-06358399ce2e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -669,9 +749,9 @@
 							],
 							"query": [
 								{
+									"description": "The patient file's ID",
 									"key": "id",
-									"value": "{{id}}",
-									"description": "The patient file's ID"
+									"value": "{{id}}"
 								}
 							]
 						},
@@ -679,11 +759,20 @@
 					},
 					"response": [
 						{
-							"id": "8c0be54f-25e1-4fff-9708-b72b4378949b",
+							"id": "a38de434-415c-40c6-9eda-8ae1bec1d597",
 							"name": "Delete patient file",
 							"originalRequest": {
 								"method": "DELETE",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "\"\""
@@ -698,11 +787,13 @@
 									],
 									"query": [
 										{
+											"description": "The patient file's ID",
 											"key": "id",
 											"value": "{{id}}"
 										}
 									]
-								}
+								},
+								"description": "Deletes a patient file from the system by `id`."
 							},
 							"status": "OK",
 							"code": 200,
@@ -710,33 +801,48 @@
 							"header": [
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Connection",
-									"value": "keep-alive",
-									"description": ""
+									"value": "keep-alive"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Content-Length",
-									"value": "64",
-									"description": ""
+									"value": "64"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "Date",
-									"value": "Fri, 11 Jan 2019 00:20:55 GMT",
-									"description": ""
+									"value": "Fri, 11 Jan 2019 00:20:55 GMT"
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "ETag",
-									"value": "W/\"40-bT/ASzl0KO3wj/eo2xEBaHPLnvk\"",
-									"description": ""
+									"value": "W/\"40-bT/ASzl0KO3wj/eo2xEBaHPLnvk\""
 								},
 								{
 									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
 									"key": "X-Powered-By",
-									"value": "Express",
-									"description": ""
+									"value": "Express"
 								},
 								{
 									"key": "Content-Type",
@@ -749,14 +855,14 @@
 					]
 				}
 			],
-			"id": "19381920-1f4c-4c30-8767-de1902a9374d"
+			"id": "30436c57-9118-40fc-9330-f056652e15a5"
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "756f3603-782c-4937-8fbf-7e6ccb153870",
+				"id": "d81bd4c4-d655-4f77-b005-8d48470a9f6a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -766,7 +872,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7240db77-c5e7-4ea0-8bf6-466084c126b3",
+				"id": "81b009a9-7457-47f7-875f-f5315ff180da",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -776,7 +882,7 @@
 	],
 	"variable": [
 		{
-			"id": "86c434d1-08cf-4318-8a64-f89771514c03",
+			"id": "4568c5bf-96cb-455a-a547-540b3ac44adc",
 			"key": "baseUrl",
 			"value": "https://03d3ab1c-b3ee-4518-bea3-128334115aab.mock.pstmn.io",
 			"type": "string"

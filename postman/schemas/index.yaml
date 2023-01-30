@@ -354,6 +354,3 @@ tags:
   - name: Read
   - name: Update
   - name: Delete
-
-security:
-  - AuthKeyAuth: []
