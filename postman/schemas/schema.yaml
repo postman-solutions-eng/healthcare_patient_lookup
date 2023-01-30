@@ -5,6 +5,7 @@ info:
   version: 1.0.0
   contact: {}
 servers:
+  - url: "https://staging.something.com"
   - url: "https://03d3ab1c-b3ee-4518-bea3-128334115aab.mock.pstmn.io"
 paths:
   /create:
