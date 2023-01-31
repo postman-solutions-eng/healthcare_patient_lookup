@@ -203,15 +203,15 @@ paths:
                     - firstName: Ben
                       id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                       lastName: Smith
-  /get/:
+  /get/by-last-name:
     get:
       tags:
         - Read
       summary: Get patient files by last name
-      description: "Retrieves all patient files with the given `firstName`."
+      description: "Retrieves all patient files with the given `lastNae`."
       operationId: getPatientFilesByLastName
       parameters:
-        - name: firstName
+        - name: lastName
           in: query
           schema:
             type: string
