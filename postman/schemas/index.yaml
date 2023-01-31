@@ -3,7 +3,9 @@ info:
   title: Patient Lookup
   description: "API for creating and managing patient information."
   version: 1.0.0
-  contact: {}
+  contact:
+    email: info@postmansolutions.com
+    name: Postman Solutions
 servers:
   - url: "https://03d3ab1c-b3ee-4518-bea3-128334115aab.mock.pstmn.io"
 paths:
