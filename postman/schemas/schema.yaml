@@ -3,13 +3,17 @@ info:
   title: Patient Lookup
   description: "API for creating and managing patient information."
   version: 1.0.0
-  contact: {}
+  contact:
+    email: info@postmansolutions.com
+    name: Postman Solutions
   license:
-    name: Apache 2.0
-    url: https://www.apache.org/licenses/LICENSE-2.0.html
+    name: "BSD-1-clause"
+    url: https://opensource.org/license/bsd-1-clause/
+  termsOfService: http://example.com/tos
+
 servers:
-  - url: "https://staging.something.com"
   - url: "https://03d3ab1c-b3ee-4518-bea3-128334115aab.mock.pstmn.io"
+
 paths:
   /create:
     post:
@@ -22,6 +26,7 @@ paths:
         content:
           application/form-urlencoded:
             schema:
+              $ref: '#/components/schemas/Patient'
               type: object
               properties:
                 firstName:
@@ -39,27 +44,33 @@ paths:
           headers:
             Connection:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: keep-alive
             Content-Length:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "101"
             Date:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "Thu, 10 Jan 2019 23:58:59 GMT"
             ETag:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "W/\"65-KsPJ95rCxmmvvRBY2Sqroxk2vmA\""
             X-Powered-By:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: Express
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: object
                 properties:
                   firstName:
@@ -81,6 +92,8 @@ paths:
                     id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                     lastName: Smith
                     status: success
+        "500":
+          description: "Internal server error"
   /delete:
     delete:
       tags:
@@ -92,6 +105,7 @@ paths:
         - name: id
           in: query
           schema:
+            $ref: '#/components/schemas/Patient'
             type: string
             example: "{{id}}"
           description: "The patient file's ID"
@@ -105,27 +119,33 @@ paths:
           headers:
             Connection:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: keep-alive
             Content-Length:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "64"
             Date:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "Fri, 11 Jan 2019 00:20:55 GMT"
             ETag:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "W/\"40-bT/ASzl0KO3wj/eo2xEBaHPLnvk\""
             X-Powered-By:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: Express
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: object
                 properties:
                   id:
@@ -139,6 +159,8 @@ paths:
                   value:
                     id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                     status: success
+        "500":
+          description: "Internal server error"
   /get:
     get:
       tags:
@@ -150,6 +172,7 @@ paths:
         - name: all
           in: query
           schema:
+            $ref: '#/components/schemas/Patient'
             type: string
             example: "true"
       responses:
@@ -158,27 +181,33 @@ paths:
           headers:
             Connection:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: keep-alive
             Content-Length:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "105"
             Date:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "Fri, 11 Jan 2019 00:00:53 GMT"
             ETag:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "W/\"69-ti7ujd/Cyb8EeoWoqRXh482Zy5o\""
             X-Powered-By:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: Express
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: array
                 items:
                   type: object
@@ -207,17 +236,20 @@ paths:
                     - firstName: Ben
                       id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                       lastName: Smith
-  /get/:
+        "500":
+          description: "Internal server error"
+  /get/by-last-name:
     get:
       tags:
         - Read
       summary: Get patient files by last name
-      description: "Retrieves all patient files with the given `firstName`."
+      description: "Retrieves all patient files with the given `lastNae`."
       operationId: getPatientFilesByLastName
       parameters:
-        - name: firstName
+        - name: lastName
           in: query
           schema:
+            $ref: '#/components/schemas/Patient'
             type: string
             example: "{{$randomLastName}}"
           description: "The patient file's first name (required)"
@@ -227,27 +259,33 @@ paths:
           headers:
             Connection:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: keep-alive
             Content-Length:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "105"
             Date:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "Fri, 11 Jan 2019 00:05:34 GMT"
             ETag:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "W/\"69-F/ktIhtM5We/sndYYNUK1vmdEnQ\""
             X-Powered-By:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: Express
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: array
                 items:
                   type: object
@@ -276,6 +314,8 @@ paths:
                     - firstName: "{{$randomFirstName}}"
                       id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                       lastName: "{{$randomLastName}}"
+        "500":
+          description: "Internal server error"
   /update:
     put:
       tags:
@@ -287,6 +327,7 @@ paths:
         - name: id
           in: query
           schema:
+            $ref: '#/components/schemas/Patient'
             type: string
             example: "{{id}}"
           description: "The patient file's ID (required)"
@@ -294,6 +335,7 @@ paths:
         content:
           application/form-urlencoded:
             schema:
+              $ref: '#/components/schemas/Patient'
               type: object
               properties:
                 firstName:
@@ -311,27 +353,33 @@ paths:
           headers:
             Connection:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: keep-alive
             Content-Length:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "106"
             Date:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "Fri, 11 Jan 2019 00:18:07 GMT"
             ETag:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: "W/\"6a-SA9mzR+M2pmN7WPGgLm1ZqtRYis\""
             X-Powered-By:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: string
                 example: Express
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/Patient'
                 type: object
                 properties:
                   firstName:
@@ -353,11 +401,23 @@ paths:
                     id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                     lastName: Smith
                     status: success
+        "500":
+          description: "Internal server error"
+
 tags:
   - name: Create
   - name: Read
   - name: Update
   - name: Delete
 
+components:
+  securitySchemes:
+    ApiTokenAuth:
+      type: http
+      scheme: basic
+  schemas:
+    Patient:
+      type: object
+
 security:
-  - AuthKeyAuth: []
+  - ApiTokenAuth: []
