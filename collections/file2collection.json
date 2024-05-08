@@ -1,0 +1,833 @@
+{
+	"info": {
+		"_postman_id": "a848aee3-d19c-43bb-8864-d2dadbbb959e",
+		"name": "file2collection",
+		"description": "API for creating and managing patient information.\n\nContact Support:\n Name: Postman Solutions\n Email: info@postmansolutions.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "16901628-a848aee3-d19c-43bb-8864-d2dadbbb959e"
+	},
+	"item": [
+		{
+			"name": "create",
+			"item": [
+				{
+					"name": "New patient file",
+					"id": "ce2869d8-d0ff-4775-8747-07c2f7c85355",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create"
+							]
+						},
+						"description": "Creates a new patient file in the system. The patient file will be assigned an ID automatically. This can be found in the response."
+					},
+					"response": [
+						{
+							"id": "cbbe5cbe-d3d8-4d21-a399-eb4cbb5234fb",
+							"name": "New patient file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "d202de4f-c6cb-4249-b274-a380589ca258",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "c4162fcc-03a8-401c-86ae-def21ddd98e9"
+		},
+		{
+			"name": "delete",
+			"item": [
+				{
+					"name": "Delete patient file",
+					"id": "e4683527-be47-4f23-8f82-9d522a5dbf47",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"example\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete"
+							]
+						},
+						"description": "Deletes a patient file from the system by `id`."
+					},
+					"response": [
+						{
+							"id": "1a234e57-0bed-44d3-ae6d-3e90b584b265",
+							"name": "Delete patient file",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"example\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delete",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "940bb463-a531-4f36-87ea-6d4aafe34116",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"example\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delete",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "a35b0107-e278-4e0c-8230-cd1ff451cc35"
+		},
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "by-last-name",
+					"item": [
+						{
+							"name": "Get patient files by last name",
+							"id": "f1b9be3d-c42b-46f9-b3c4-9a920d71e62b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/get/by-last-name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get",
+										"by-last-name"
+									]
+								},
+								"description": "Retrieves all patient files with the given `lastNae`."
+							},
+							"response": [
+								{
+									"id": "b92d8f03-ace4-4224-8c50-317042ea3153",
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/get/by-last-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"get",
+												"by-last-name"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Connection",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Content-Length",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Date",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "ETag",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-Powered-By",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								},
+								{
+									"id": "fabfa917-58dd-47ba-a973-13a796200a73",
+									"name": "Internal server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/get/by-last-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"get",
+												"by-last-name"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "ba792154-3de2-4650-9053-a7f4918d9969"
+				},
+				{
+					"name": "Get all patient files",
+					"id": "e3feb635-f768-44e7-b7eb-148535cb797b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/get",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"get"
+							]
+						},
+						"description": "Get all patient files in the system."
+					},
+					"response": [
+						{
+							"id": "a774520f-1019-409a-9aa2-7ceffed7b33a",
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/get",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "a35efd3b-71c4-4d8b-aade-355c0b4e9edd",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/get",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "21446118-421d-4e1d-9764-ab7b8f1f47bb"
+		},
+		{
+			"name": "update",
+			"item": [
+				{
+					"name": "Update patient file",
+					"id": "b69d52f5-39e8-4b68-bd2e-c063ea1c9db3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update"
+							]
+						},
+						"description": "Send the keys that you'd like to update, this can be one or more of `firstName`, `lastName` and `password`."
+					},
+					"response": [
+						{
+							"id": "0276b934-fd43-42cd-b9f2-d9d748b7592b",
+							"name": "Update patient file",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "7a007fdb-d498-4e69-973f-2c5c74988b25",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/form-urlencoded"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "4a3aa113-0b1c-4d58-88f8-f373cf322adf"
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{basicAuthUsername}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{basicAuthPassword}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "22685d8a-2c10-487f-acc8-b6c93af2faff",
+			"key": "baseUrl",
+			"value": "https://03d3ab1c-b3ee-4518-bea3-128334115aab.mock.pstmn.io"
+		}
+	]
+}
